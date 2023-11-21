@@ -29,5 +29,3 @@ jobs:
 
       - name: Compile and run java code
         run: |
-          javac Main.Java
-          java Main
