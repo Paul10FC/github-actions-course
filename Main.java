@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        String username = System.getenv("USERNAME");
+        System.out.println("Hello " + username + " from your github account");
     }
 }
