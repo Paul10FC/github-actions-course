@@ -1,7 +1,7 @@
 name: Expression
 run-name: Aprendiendo a usar variables
 env:
-  resultadoSuma: ${{ 2 + 5 }}
+  resultadoSuma: ${{ 7 }}
 on:
   workflow_dispatch:
     inputs:
@@ -11,13 +11,13 @@ on:
         type: number
 jobs:
     correcto:
-        if: ${{ inputs.sum == $resultadoSuma }}
+        if: ${{ inputs.sum == 7 }}
         runs-on: ubuntu-latest
         steps:
           - name: correr script correcto
             run: echo $resultadoSuma es correcto!!
     incorrecto:
-        if: ${{ inputs.sum != $resultadoSuma }}
+        if: ${{ inputs.sum != 7 }}
         runs-on: ubuntu-latest
         steps:
           - name: correr script incorrecto
