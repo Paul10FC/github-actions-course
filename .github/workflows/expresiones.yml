@@ -1,0 +1,25 @@
+name: Expression
+run-name: Aprendiendo a usar variables
+env:
+  resultadoSuma: ${{ 2 + 5 }}
+on:
+  workflow_dispatch:
+    inputs:
+      sum:
+        description: 'Resuelve la suma de 2 + 5'
+        required: true
+        type: number
+jobs:
+    correcto:
+        if: ${{ inputs.sum == $resultadoSuma }}
+        runs-on: ubuntu-latest
+        steps:
+          - name: correr script correcto
+            run: echo $resultadoSuma es correcto!!
+    incorrecto:
+        if: ${{ inputs.sum != $resultadoSuma }}
+        runs-on: ubuntu-latest
+        steps:
+          - name: correr script incorrecto
+            run: echo ${{ inputs.sum }} no es correcto, el resultado era $resultadoSuma
+          
