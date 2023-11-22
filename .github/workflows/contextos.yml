@@ -13,7 +13,9 @@ jobs:
         run: echo "My first name is ${{ env.first_name }} and my last name is ${{ env.last_name }}"
       - name: execute github variables
         run: echo "The auth in this github is ${{ github.actor }} and the branch is ${{ github.ref }}"
-      - name: job finished
-        run: echo " ${{ job.status }}""
-        
+  terminando_contexto:
+    runs-on: ubuntu-latest
+    steps:
+      - name: finish proccess
+        run: echo " el proceso ha ${{ corriendo_contexto.status }}"
 
