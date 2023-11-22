@@ -1,0 +1,19 @@
+name: contexto
+run-name: aprendiendo contextos
+on: 
+  workflow_dispatch:
+env:
+  first_name: paul
+  last_name: flores
+jobs:
+  corriendo_contexto:
+    runs-on: ubuntu-latest
+    steps:
+      - name: execute_variables
+        run: echo "My first name is ${{ env.first_name }} and my last name is ${{ env.last_name }}"
+      - name: execute github variables
+        run: echo "The auth in this github is ${{ github.actor }} and the branch is ${{ github.ref }}"
+      - name: job finished
+        run: echo " ${{ job.status }}""
+        
+
