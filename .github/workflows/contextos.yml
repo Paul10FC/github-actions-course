@@ -17,5 +17,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: finish proccess
-        run: echo " el proceso ha ${{ job.status }}"
+        run: echo " the proccess status is ${{ job.status }}"
 
