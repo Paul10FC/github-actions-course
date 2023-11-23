@@ -14,4 +14,4 @@ jobs:
           step_variable: Im from step
         run: echo "we have 3 variables 1. $local_variable 2. $job_variable 3. $step_variable"
       - name: execute foreign variables
-        run: echo "The foreign variable is $NAME_PLATZI_COURSE"
+        run: echo "The foreign variable is ${{ secrets.NAME_PLATZI_COURSE }}"
